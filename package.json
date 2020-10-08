@@ -1,0 +1,9 @@
+{
+  "name": "zendesk",
+  "version": "1.0.0",
+  "description": "api zendesk",
+  "main": "index.js",
+  "repository": "https://github.com/lumamontes/zendesk.git",
+  "author": "Luma Montes <lumagoesmontes@gmail.com>",
+  "license": "MIT"
+}
