@@ -1,11 +1,10 @@
-
 var zendesk = require('node-zendesk');
 var client = zendesk.createClient({
-    username:  'uberlon@proesc.com',
+    username:  '',
     token:     '',
-    remoteUri: 'https://proesc.zendesk.com/api/v2',
+    remoteUri: '',
   disableGlobalState: true,
-  debug: false 
+  debug: false
 });
 // client.tickets.list(function (err, req, result) {
 //     if (err) {
@@ -17,9 +16,7 @@ var client = zendesk.createClient({
 //     console.log('acabou');//gets the first page
 //   });
 
-var query = "tags:luma status:solved";
-
-
+var query = "tags:luma";
 client.search.query(query, function (err, req, result) {
   if (err) {
     console.log(err);
