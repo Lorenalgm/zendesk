@@ -6,6 +6,10 @@
   "repository": "https://github.com/lumamontes/zendesk.git",
   "author": "Luma Montes <lumagoesmontes@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
+  },
   "dependencies": {
     "axios": "^0.21.1",
     "cors": "^2.8.5",

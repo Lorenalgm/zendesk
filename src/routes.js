@@ -1,11 +1,11 @@
 const { Router } = require('express');
 const routes = Router();
-const AgentController = require('./controllers/AgentController');
+const TicketsController = require('./controllers/TicketsController');
 
 routes.get('/', (req, res) => {
 	return res.json({ status: true }).send();
 });
 
-routes.get('/agents', AgentController.index);
+routes.get('/tickets', TicketsController.index);
 
 module.exports = routes;
