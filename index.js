@@ -1,8 +1,8 @@
 var zendesk = require('node-zendesk');
 var client = zendesk.createClient({
-  username:  'uberlon@proesc.com',
-  token:     '1jOXPKQ6aIWchAS7UvCeCqXS0R7Mg9RLIqCpuNH5',
-  remoteUri: 'https://proesc.zendesk.com/api/v2',
+  username:  '',
+  token:     '',
+  remoteUri: '',
   disableGlobalState: true,
   debug: false
 });
