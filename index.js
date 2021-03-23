@@ -1,8 +1,8 @@
 var zendesk = require('node-zendesk');
 var client = zendesk.createClient({
-    username:  '',
-    token:     '',
-    remoteUri: '',
+  username:  '',
+  token:     '',
+  remoteUri: '',
   disableGlobalState: true,
   debug: false
 });
