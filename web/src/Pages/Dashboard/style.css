@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
 :root {
@@ -14,6 +15,18 @@
     --sucess-color: #3CE039;
     --warning-color: #DBC81E;
     --info-color: #14D5FF;
+}
+
+.sucess {
+    color: #3CE039; ;
+}
+
+.warning{
+    color: #DBC81E;
+}
+
+.info {
+    color: #14D5FF;
 }
 
 .dashboard-container{
@@ -28,17 +41,23 @@
 
 .indicator-header {
     background-color: #2C2929;
-    width: 100%;
+    width: inherit;
     height: 20vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1.5rem;
 }
 
+.indicator-header h2 {
+    font-size: 2.25rem;
+}
+.indicator-header p{
+    font-size: 1.875rem
+}
 .indicators-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 2.5rem;
+    margin: auto;
 }

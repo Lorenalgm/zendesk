@@ -11,12 +11,12 @@ function Dashboard (){
             </header>
 
             <div className="indicators-container">
-                < IndicatorCard number="23" text="resolvidos"/>
-                < IndicatorCard number="23" text="resolvidos"/>
-                < IndicatorCard number="23" text="resolvidos"/>
-                < IndicatorCard number="23" text="resolvidos"/>
-                < IndicatorCard number="23" text="resolvidos"/>
-                < IndicatorCard number="23" text="resolvidos"/>
+                < IndicatorCard color="sucess" number="23" text="Resolvidos"/>
+                < IndicatorCard color="info" number="23" text="Resolvidos"/>
+                < IndicatorCard color="warning" number="23" text="Resolvidos"/>
+                < IndicatorCard color="sucess" number="23" text="Resolvidos"/>
+                < IndicatorCard color="info" number="23" text="Resolvidos"/>
+                < IndicatorCard color="warning" number="23" text="Resolvidos"/>
             </div>
 
         </div>
