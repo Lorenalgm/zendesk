@@ -8,13 +8,17 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     transition: 200ms;
 
 }
 
 .indicator-card h1 {
-    font-size: 5rem;
+    font-size: 3.75rem;
+}
+
+.indicator-card p{
+    font-size: 1.87rem;
+    font-weight: 700;
 }
 
 .indicator-card:hover{
