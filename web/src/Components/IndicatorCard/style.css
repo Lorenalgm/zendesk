@@ -1,0 +1,23 @@
+.indicator-card{
+    width: 12.5rem;
+    height: 12.2rem;
+    background: #2C2929;
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    transition: 200ms;
+
+}
+
+.indicator-card h1 {
+    font-size: 5rem;
+}
+
+.indicator-card:hover{
+    background: #312e2e;
+
+}
