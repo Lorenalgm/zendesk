@@ -4,7 +4,7 @@ import api from '../../services/api';
 export default function Home() {        
     var today = new Date(),
     data = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-    // const data =  Date('Y-m-d');
+
     const [luma, setLuma] = useState('');
     const [lucas, setLucas] = useState('');
     const [douglas, setDouglas] = useState('');
@@ -43,7 +43,14 @@ export default function Home() {
     },[])
 
     return (
-        <div className="container-candidates">
+        <div className="container-tickets">
+            <div className="tickets-header">
+
+                <div className="tickets-container-title">
+                    <h1>Tickets do dia</h1>
+                    <h2>{data}</h2>
+                </div>
+            </div>
             <h1>Tickets resolvidos hoje - {data}</h1>
                     <div className="candidates">                            
                                 <div>
