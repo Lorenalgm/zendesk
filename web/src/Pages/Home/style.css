@@ -1,0 +1,30 @@
+.tickets-container{
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tickets-container .tickets-header {
+    background-color: #2C2929;
+    width: inherit;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.tickets-container .tickets-header  h2{
+    font-weight: normal;
+}
+
+.tickets-container .agents-container{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 3em;
+    width: 80%;
+}
