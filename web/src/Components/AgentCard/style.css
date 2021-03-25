@@ -1,0 +1,40 @@
+.agent-card{
+    width: 12.5rem;
+    height: 12.2rem;
+    background: #2C2929;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 200ms;
+}
+
+.agent-card:hover{
+    background: #312e2e;
+
+}
+
+.agent-card h1 {
+    font-size: 1.5rem;
+    line-height: 1.5em;
+}
+
+.agent-card p{
+    font-size: 1rem;
+    line-height: 1.5em;
+}
+
+.agent-card .solveds{
+    color: var(--sucess-color);
+}
+
+.agent-card .pending{
+    color: var(--info-color);
+    font-weight: normal;
+}
+
+.agent-card img{
+    width: 4em;
+    border-radius: 50%;
+}
