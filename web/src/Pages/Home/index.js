@@ -13,34 +13,34 @@ export default function Home() {
     const [jean, setJean] = useState('');
     
     async function searchLumaTickets(){
-        const response = await api.get(`/search/count?query=tags:luma solved:${data}`);
-        console.log(response.data.count);
-        setLuma(response.data.count);
+        const response = await api.get(`/tickets/?filter=tags:luma solved:${data}`);
+        console.log(response.data);
+        setLuma(response.data);
     }
 
-    // async function searchLucasTickets(){
-    //     const response = await api.get(`/search/count?query=tags:lucas solved:${data}`);
-    //     console.log(response.data);
-    //     setLucas(response.data);
-    // }
+    async function searchLucasTickets(){
+        const response = await api.get(`/tickets/?filter=tags:lucas solved:${data}`);
+        console.log(response.data);
+        setLucas(response.data);
+    }
 
-    // async function searchDouglasTickets(){
-    //     const response = await api.get(`/search/count?query=tags:douglas solved:${data}`);
-    //     console.log(response.data);
-    //     setDouglas(response.data);
-    // }
+    async function searchDouglasTickets(){
+        const response = await api.get(`/tickets/?filter=tags:douglas solved:${data}`);
+        console.log(response.data);
+        setDouglas(response.data);
+    }
 
-    // async function searchJeanTickets(){
-    //     const response = await api.get(`/search/count?query=tags:jean solved:${data}`);
-    //     console.log(response.data);
-    //     setJean(response.data);
-    // }
+    async function searchJeanTickets(){
+        const response = await api.get(`/tickets/?filter=tags:jean solved:${data}`);
+        console.log(response.data);
+        setJean(response.data);
+    }
 
     useEffect(() => {
         searchLumaTickets();
-        // searchLucasTickets();
-        // searchDouglasTickets();
-        // searchJeanTickets();
+        searchLucasTickets();
+        searchDouglasTickets();
+        searchJeanTickets();
 
     },[])
 
@@ -55,7 +55,7 @@ export default function Home() {
                 <AgentCard 
                     agent_picture="https://trello-attachments.s3.amazonaws.com/6036bbbae08c87245655c33e/247x256/4295998a229b8199a8e63e3d50d23cba/image.png" 
                     agent="Luma" solved={luma} pending={luma} />
-                {/* <AgentCard 
+                <AgentCard 
                     agent_picture="https://trello-attachments.s3.amazonaws.com/60353fe07ac21479926b9f40/511x512/70456850a92e4d8718e6f7613e066e66/Screenshot_3.png" 
                     agent="Lucas" solved={lucas} pending={lucas} />
                 
@@ -65,7 +65,7 @@ export default function Home() {
                 
                 <AgentCard 
                     agent_picture="https://upload.wikimedia.org/wikipedia/commons/7/70/User_icon_BLACK-01.png" 
-                    agent="Jean" solved={jean} pending={jean} /> */}
+                    agent="Jean" solved={jean} pending={jean} />
             </div>
 
             <div className="total">
