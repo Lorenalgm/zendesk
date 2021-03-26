@@ -48,7 +48,7 @@ export default function Home() {
         <div className="tickets-container">
             <header className="tickets-header">
                 <h1>Tickets do dia</h1>
-                <h2>{data}</h2>
+                <h2>{today.getDate() + '/' + (today.getMonth() + 1) + '/' + today.getFullYear()}</h2>
             </header>
 
             <div className="agents-container">

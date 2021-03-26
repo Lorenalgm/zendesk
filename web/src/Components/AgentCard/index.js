@@ -8,7 +8,7 @@ function AgentCard (props){
                 <img src={props.agent_picture} alt={props.agent} />
                 <h1 className={props.color}>{props.agent}</h1>
                 <p className="solveds">Resolvidos: {props.solved}</p>
-                <p className="pending">Pendentes: {props.pending}</p>
+                {/* <p className="pending">Pendentes: {props.pending}</p> */}
         </div>
     );
 }
