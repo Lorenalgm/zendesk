@@ -12,31 +12,31 @@ export default function Home() {
     const [douglas, setDouglas] = useState('');
     const [jean, setJean] = useState('');
     
-    async function searchLumaTickets(){
-        const response = await api.get(`/tickets/?filter=tags:luma solved:${data}`);
-        console.log(response.data);
-        setLuma(response.data);
-    }
-
-    async function searchLucasTickets(){
-        const response = await api.get(`/tickets/?filter=tags:lucas solved:${data}`);
-        console.log(response.data);
-        setLucas(response.data);
-    }
-
-    async function searchDouglasTickets(){
-        const response = await api.get(`/tickets/?filter=tags:douglas solved:${data}`);
-        console.log(response.data);
-        setDouglas(response.data);
-    }
-
-    async function searchJeanTickets(){
-        const response = await api.get(`/tickets/?filter=tags:jean solved:${data}`);
-        console.log(response.data);
-        setJean(response.data);
-    }
-
     useEffect(() => {
+        async function searchLumaTickets(){
+            const response = await api.get(`/tickets/?filter=tags:luma solved:${data}`);
+            console.log(response.data);
+            setLuma(response.data);
+        }
+
+        async function searchLucasTickets(){
+            const response = await api.get(`/tickets/?filter=tags:lucas solved:${data}`);
+            console.log(response.data);
+            setLucas(response.data);
+        }
+
+        async function searchDouglasTickets(){
+            const response = await api.get(`/tickets/?filter=tags:douglas solved:${data}`);
+            console.log(response.data);
+            setDouglas(response.data);
+        }
+
+        async function searchJeanTickets(){
+            const response = await api.get(`/tickets/?filter=tags:jean solved:${data}`);
+            console.log(response.data);
+            setJean(response.data);
+        }
+
         searchLumaTickets();
         searchLucasTickets();
         searchDouglasTickets();
@@ -64,7 +64,7 @@ export default function Home() {
                     agent="Douglas" solved={douglas} pending={douglas} />
                 
                 <AgentCard 
-                    agent_picture="https://upload.wikimedia.org/wikipedia/commons/7/70/User_icon_BLACK-01.png" 
+                    agent_picture="https://ca.slack-edge.com/T56FFG3EW-U9DRM3BEY-86c9a1e83d72-512" 
                     agent="Jean" solved={jean} pending={jean} />
             </div>
 
