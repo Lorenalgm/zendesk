@@ -15,25 +15,25 @@ export default function Home() {
     useEffect(() => {
         async function searchLumaTickets(){
             const response = await api.get(`/tickets/?filter=tags:luma solved:${data}`);
-            console.log(response.data);
+            // console.log(response.data);
             setLuma(response.data);
         }
 
         async function searchLucasTickets(){
             const response = await api.get(`/tickets/?filter=tags:lucas solved:${data}`);
-            console.log(response.data);
+            // console.log(response.data);
             setLucas(response.data);
         }
 
         async function searchDouglasTickets(){
             const response = await api.get(`/tickets/?filter=tags:douglas solved:${data}`);
-            console.log(response.data);
+            // console.log(response.data);
             setDouglas(response.data);
         }
 
         async function searchJeanTickets(){
             const response = await api.get(`/tickets/?filter=tags:jean solved:${data}`);
-            console.log(response.data);
+            // console.log(response.data);
             setJean(response.data);
         }
 
@@ -42,7 +42,7 @@ export default function Home() {
         searchDouglasTickets();
         searchJeanTickets();
 
-    },[])
+    },[data])
 
     return (
         <div className="tickets-container">
