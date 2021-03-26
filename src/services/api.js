@@ -1,10 +1,10 @@
 const axios = require('axios');
 
 const api = axios.create({
-    baseURL: 'https://proesc.zendesk.com/api/v2',
+    baseURL: process.env.ZENDESK_URL,
     auth: {
-        username: '',
-        password: ''
+        username: process.env.ZENDESK_USERNAME,
+        password: process.env.ZENDESK_PASSWORD
       }
 })
 
