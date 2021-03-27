@@ -8,6 +8,7 @@
     justify-content: center;
     align-items: center;
     transition: 200ms;
+    margin-bottom: 2em;
 }
 
 .agent-card:hover{
