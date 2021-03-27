@@ -1,6 +1,5 @@
 .tickets-container{
     width: 100vw;
-    height: 100vh;
     background-color: black;
     color: white;
     display: flex;
@@ -28,4 +27,11 @@
     margin-top: 3em;
     width: 80%;
     flex-wrap: wrap;
+}
+
+@media screen and (min-width: 640px){
+    .tickets-container{
+        height: 100vh;
+    }
+    
 }
