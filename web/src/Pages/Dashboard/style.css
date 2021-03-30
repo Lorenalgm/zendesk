@@ -1,5 +1,5 @@
 
-.sucess {
+ .sucess {
     color: #3CE039; ;
 }
 
@@ -13,12 +13,10 @@
 
 .dashboard-container{
     width: 100vw;
-    height: 100vh;
+    height: 100%;
+
     background-color: black;
     color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .indicator-header {
@@ -36,10 +34,21 @@
 }
 .indicator-header p{
     font-size: 1.875rem
-}
+} 
 .indicators-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2.5rem;
-    margin: auto;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 2.5rem;
+}
+   
+@media (min-width: 700px) {
+    .dashboard-container {
+        height: 100vh;
+   }
+  .indicators-container {
+    max-width: 970px;
+    margin: 2.5rem auto;
+}
+  
 }
