@@ -1,14 +1,14 @@
 .indicator-card{
-    width: 12.5rem;
-    height: 12.2rem;
+    width: 10.25rem;
+    height: 10.2rem;
     background: #2C2929;
     border-radius: 8px;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     transition: 200ms;
+    margin: 0 auto;
 
 }
 
