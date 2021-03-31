@@ -84,7 +84,10 @@ export default function Home() {
             </div>
 
             <div className="total">
-
+                    <p>Total Diário</p>
+                    <p> 5 resolvidos </p>
+                    <p>4 pendentes</p> 
+                    <p>5 abertos</p>
             </div>
 
         </div>
