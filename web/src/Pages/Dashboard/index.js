@@ -17,7 +17,7 @@ function Dashboard (){
 
         async function searchSolvedTickets(e){
             e.preventDefault();
-            const response = await api.get(`/tickets/?filter=status:solved updated>${inicialDate} updated<${finalDate}`);
+            const response = await api.get(`/tickets/?filter=status:solved solved>=${inicialDate} solved<=${finalDate}`);
             setSolvedTickets(response.data);
 
             const response2 = await api.get(`/tickets/?filter=status:pending`);
