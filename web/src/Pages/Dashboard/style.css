@@ -19,6 +19,11 @@
     color: white;
 }
 
+.dashboard-container .button {
+    padding: 0.3em 0.8em;
+    cursor: pointer;
+}
+
 .indicator-header {
     background-color: #2C2929;
     width: inherit;
@@ -41,14 +46,20 @@
     gap: 1rem;
     margin-top: 2.5rem;
 }
-   
+
+.teste {
+    text-transform: capitalize;
+
+}
+
 @media (min-width: 700px) {
     .dashboard-container {
         height: 100vh;
+        background-color: black;
    }
   .indicators-container {
     max-width: 970px;
-    margin: 2.5rem auto;
+    margin: 1rem auto;
 }
   
 }
