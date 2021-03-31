@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import api from '../../services/api';
 import './style.css';
 import AgentCard from '../../Components/AgentCard'
+import { Link } from 'react-router-dom';
 
 export default function Home() {        
     var today = new Date(),
@@ -62,6 +63,9 @@ export default function Home() {
     return (
         <div className="tickets-container">
             <header className="tickets-header">
+                <div className="menu">
+                    <Link className="button" to='/dashboard'>Dashboard semanal</Link>
+                </div>
                 <h1>Tickets do dia</h1>
                 <h2>{today.getDate() + '/' + (today.getMonth() + 1) + '/' + today.getFullYear()}</h2>
             </header>
@@ -84,10 +88,9 @@ export default function Home() {
             </div>
 
             <div className="total">
-                    <p>Total Diário</p>
-                    <p> 5 resolvidos </p>
-                    <p>4 pendentes</p> 
-                    <p>5 abertos</p>
+                    <h3>Total diário</h3>
+                    <p>{luma+lucas+douglas+jean} resolvidos </p>
+                    <p>{lumaPending+lucasPending+douglasPending+jeanPending} pendentes</p> 
             </div>
 
         </div>
