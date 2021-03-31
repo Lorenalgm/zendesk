@@ -1,0 +1,13 @@
+.cardSkeleton {
+    width: 12.5rem;
+    height: 12.2rem;
+}
+
+.skeleton-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 3em;
+    width: 80%;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}

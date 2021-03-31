@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react';
 import api from '../../services/api';
 import './style.css';
 import AgentCard from '../../Components/AgentCard'
+import AgentsSkeleton from '../../Components/AgentsSkeleton'
 import { Link } from 'react-router-dom';
 
 export default function Home() {        
     var today = new Date(),
     data = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+    const [loading, setLoading] = useState(true);
 
     const [luma, setLuma] = useState('');
     const [lumaPending, setLumaPending] = useState('');
@@ -51,6 +53,8 @@ export default function Home() {
 
             const response2 = await api.get(`/tickets/?filter=tags:jean status:pending`);
             setJeanPending(response2.data);
+            setLoading(false);
+
         }
 
         searchLumaTickets();
@@ -69,26 +73,28 @@ export default function Home() {
                 <h1>Tickets do dia</h1>
                 <h2>{today.getDate() + '/' + (today.getMonth() + 1) + '/' + today.getFullYear()}</h2>
             </header>
-
-            <div className="agents-container">
-                <AgentCard 
-                    agent_picture="https://trello-attachments.s3.amazonaws.com/6036bbbae08c87245655c33e/247x256/4295998a229b8199a8e63e3d50d23cba/image.png" 
-                    agent="Luma" solved={luma} pending={lumaPending} />
-                <AgentCard 
-                    agent_picture="https://trello-attachments.s3.amazonaws.com/60353fe07ac21479926b9f40/511x512/70456850a92e4d8718e6f7613e066e66/Screenshot_3.png" 
-                    agent="Lucas" solved={lucas} pending={lucasPending} />
-                
-                <AgentCard 
-                    agent_picture="https://trello-attachments.s3.amazonaws.com/6035712992fb3687357181b6/792x793/503a808e6af8a30822fee82ecca57fdb/img_-_Douglas_Esp%C3%ADndola.png" 
-                    agent="Douglas" solved={douglas} pending={douglasPending} />
-                
-                <AgentCard 
-                    agent_picture="https://ca.slack-edge.com/T56FFG3EW-U9DRM3BEY-86c9a1e83d72-512" 
-                    agent="Jean" solved={jean} pending={jeanPending} />
-            </div>
+            {loading && <AgentsSkeleton />}
+            {!loading && (
+                <div className="agents-container">
+                    <AgentCard 
+                        agent_picture="https://trello-attachments.s3.amazonaws.com/6036bbbae08c87245655c33e/247x256/4295998a229b8199a8e63e3d50d23cba/image.png" 
+                        agent="Luma" solved={luma} pending={lumaPending} />
+                    <AgentCard 
+                        agent_picture="https://trello-attachments.s3.amazonaws.com/60353fe07ac21479926b9f40/511x512/70456850a92e4d8718e6f7613e066e66/Screenshot_3.png" 
+                        agent="Lucas" solved={lucas} pending={lucasPending} />
+                    
+                    <AgentCard 
+                        agent_picture="https://trello-attachments.s3.amazonaws.com/6035712992fb3687357181b6/792x793/503a808e6af8a30822fee82ecca57fdb/img_-_Douglas_Esp%C3%ADndola.png" 
+                        agent="Douglas" solved={douglas} pending={douglasPending} />
+                    
+                    <AgentCard 
+                        agent_picture="https://ca.slack-edge.com/T56FFG3EW-U9DRM3BEY-86c9a1e83d72-512" 
+                        agent="Jean" solved={jean} pending={jeanPending} />
+                </div>
+            )}
 
             <div className="total">
-                    <h3>Total diário</h3>
+                    <h3>Total N2</h3>
                     <p>{luma+lucas+douglas+jean} resolvidos </p>
                     <p>{lumaPending+lucasPending+douglasPending+jeanPending} pendentes</p> 
             </div>
