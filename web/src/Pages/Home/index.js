@@ -85,9 +85,8 @@ export default function Home() {
 
             <div className="total">
                     <p>Total Diário</p>
-                    <p> 5 resolvidos </p>
-                    <p>4 pendentes</p> 
-                    <p>5 abertos</p>
+                    <p>{luma+lucas+douglas+jean} resolvidos </p>
+                    <p>{lumaPending+lucasPending+douglasPending+jeanPending} pendentes</p> 
             </div>
 
         </div>
