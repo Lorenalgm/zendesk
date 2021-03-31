@@ -14,7 +14,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
 }
 
 .tickets-container .tickets-header  h2{
@@ -29,9 +29,39 @@
     flex-wrap: wrap;
 }
 
+.menu{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 4em;
+    margin-top: 2em;
+}
+
+.button{
+    background: white;
+    color: var(--light-background-color);
+    text-decoration: none;
+    border-radius: 8px;
+    padding: 1.2em 4em;
+    transition: 2ms;
+    font-weight: bold;
+}
+
+.button:hover{
+    background: var(--light-text-color);
+}
+
 @media screen and (min-width: 640px){
     .tickets-container{
         height: 100vh;
     }
-    
 }
+
+@media screen and (max-width: 640px){
+    .menu{
+        justify-content: center;
+        margin-right: 0;
+        margin-bottom: 2em;
+    }    
+}
+
