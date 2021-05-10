@@ -21,6 +21,9 @@ export default function Home() {
 
     const [jean, setJean] = useState('');
     const [jeanPending, setJeanPending] = useState('');
+
+    const [aureane, setAureane] = useState('');
+    const [aureanePending, setAureanePending] = useState('');
     
     useEffect(() => {
         async function searchLumaTickets(){
@@ -57,10 +60,21 @@ export default function Home() {
 
         }
 
+        async function searchAureaneTickets(){
+            const response = await api.get(`/tickets/?filter=tags:aureane solved:${data}`);
+            setAureane(response.data);
+
+            const response2 = await api.get(`/tickets/?filter=tags:aureane status:pending`);
+            setAureanePending(response2.data);
+            setLoading(false);
+
+        }
+
         searchLumaTickets();
         searchLucasTickets();
         searchDouglasTickets();
         searchJeanTickets();
+        searchAureaneTickets();
 
     },[data])
 
@@ -90,13 +104,18 @@ export default function Home() {
                     <AgentCard 
                         agent_picture="https://ca.slack-edge.com/T56FFG3EW-U9DRM3BEY-86c9a1e83d72-512" 
                         agent="Jean" solved={jean} pending={jeanPending} />
+
+                    <AgentCard 
+                        agent_picture="https://ca.slack-edge.com/T56FFG3EW-U01U6B19UFN-2a39f84e3a7d-512" 
+                        agent="Aureane" solved={aureane} pending={aureanePending} />     
+
                 </div>
             )}
 
             <div className="total">
                     <h3>Total N2</h3>
-                    <p>{luma+lucas+douglas+jean} resolvidos </p>
-                    <p>{lumaPending+lucasPending+douglasPending+jeanPending} pendentes</p> 
+                    <p>{luma+lucas+douglas+jean+aureane} resolvidos </p>
+                    <p>{lumaPending+lucasPending+douglasPending+jeanPending+aureanePending} pendentes</p> 
             </div>
 
         </div>
