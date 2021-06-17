@@ -32,12 +32,6 @@ function AgentsSkeleton() {
                 <Skeleton height={'100%'} width={'100%'} />
             </div>
         </SkeletonTheme>
-
-        <SkeletonTheme color="#1A1C1F" highlightColor="#1F2124" >
-            <div className="cardSkeleton">
-                <Skeleton height={'100%'} width={'100%'} />
-            </div>
-        </SkeletonTheme>
         </div>
     );
 }

@@ -50,16 +50,6 @@ export default function Home() {
             setDouglasPending(response2.data);
         }
 
-        async function searchJeanTickets(){
-            const response = await api.get(`/tickets/?filter=tags:jean solved:${data}`);
-            setJean(response.data);
-
-            const response2 = await api.get(`/tickets/?filter=tags:jean status:pending`);
-            setJeanPending(response2.data);
-            setLoading(false);
-
-        }
-
         async function searchAureaneTickets(){
             const response = await api.get(`/tickets/?filter=tags:aureane solved:${data}`);
             setAureane(response.data);
@@ -73,7 +63,6 @@ export default function Home() {
         searchLumaTickets();
         searchLucasTickets();
         searchDouglasTickets();
-        searchJeanTickets();
         searchAureaneTickets();
 
     },[data])
@@ -101,10 +90,6 @@ export default function Home() {
                         agent_picture="https://trello-attachments.s3.amazonaws.com/6035712992fb3687357181b6/792x793/503a808e6af8a30822fee82ecca57fdb/img_-_Douglas_Esp%C3%ADndola.png" 
                         agent="Douglas" solved={douglas} pending={douglasPending} />
                     
-                    <AgentCard 
-                        agent_picture="https://ca.slack-edge.com/T56FFG3EW-U9DRM3BEY-86c9a1e83d72-512" 
-                        agent="Jean" solved={jean} pending={jeanPending} />
-
                     <AgentCard 
                         agent_picture="https://ca.slack-edge.com/T56FFG3EW-U01U6B19UFN-2a39f84e3a7d-512" 
                         agent="Aureane" solved={aureane} pending={aureanePending} />     
