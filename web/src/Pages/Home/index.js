@@ -19,9 +19,6 @@ export default function Home() {
     const [douglas, setDouglas] = useState('');
     const [douglasPending, setDouglasPending] = useState('');
 
-    const [jean, setJean] = useState('');
-    const [jeanPending, setJeanPending] = useState('');
-
     const [aureane, setAureane] = useState('');
     const [aureanePending, setAureanePending] = useState('');
     
@@ -99,8 +96,8 @@ export default function Home() {
 
             <div className="total">
                     <h3>Total N2</h3>
-                    <p>{luma+lucas+douglas+jean+aureane} resolvidos </p>
-                    <p>{lumaPending+lucasPending+douglasPending+jeanPending+aureanePending} pendentes</p> 
+                    <p>{luma+lucas+douglas+aureane} resolvidos </p>
+                    <p>{lumaPending+lucasPending+douglasPending+aureanePending} pendentes</p> 
             </div>
 
         </div>
