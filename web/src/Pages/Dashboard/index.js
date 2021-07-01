@@ -3,7 +3,7 @@ import api from '../../services/api';
 import './style.css';
 import IndicatorCard from '../../Components/IndicatorCard';
 import { FaSearch } from 'react-icons/fa';
-
+import { Link } from 'react-router-dom';
 
 function Dashboard (){
 
@@ -17,7 +17,7 @@ function Dashboard (){
 
         async function searchSolvedTickets(e){
             e.preventDefault();
-            const response = await api.get(`/tickets/?filter=status:solved solved>=${inicialDate} solved<=${finalDate}`);
+            const response = await api.get(`/tickets/?filter=status:solved status:closed solved>=${inicialDate} solved<=${finalDate}`);
             setSolvedTickets(response.data);
 
             const response2 = await api.get(`/tickets/?filter=status:pending`);
@@ -30,11 +30,17 @@ function Dashboard (){
     return (
         <div className="dashboard-container">
             <header className="indicator-header">
+            <div className="menu">
+                <Link className="button" to='/'>Acompanhamento diário</Link>
+            </div>
+            <div className="menu">
+                <Link className="button" to='/resultados'>Resultados semanais</Link>
+            </div>
             <h2>Indicadores da semana</h2>
             <form onSubmit={searchSolvedTickets}>
                 <input type="date" name="" id="inicialDate" onChange={e => setInicialDate(e.target.value)} value={inicialDate}/>
                 <input type="date" name="" id="finalDate" onChange={e => setFinalDate(e.target.value)} value={finalDate}/>
-             <button type="submit" className="button" id="searchButton"> <FaSearch /></button>
+             <button type="submit" className="form-button" id="searchButton"> <FaSearch /></button>
             </form>
 
             </header>
