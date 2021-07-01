@@ -108,12 +108,10 @@ export default function Results() {
             }              
         }
     return (
-        <div className="tickets-container">
+        <div className="tickets-container-results">
             <header className="tickets-header">
                 <div className="menu">
                     <Link className="button" to='/dashboard'>Dashboard semanal</Link>
-                </div>
-                <div className="menu">
                     <Link className="button" to='/'>Acompanhamento diário</Link>
                 </div>
                 <h1>Resultados da semana</h1>
@@ -125,12 +123,10 @@ export default function Results() {
             </header>
 
             {loading && <AgentsSkeleton />}
-            <div className="agents-container">
+            <div className="agents-container-results">
             {!loading && (
-                
                 agentInfos.map((agente)=>{
                     return(
-                        
                             <AgentCard 
                                 agent_picture={agente.image}
                                 agent={agente.name} total={agente.total} question={agente.question} task={agente.task} problem={agente.problem}
