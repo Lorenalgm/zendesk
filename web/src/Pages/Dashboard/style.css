@@ -19,7 +19,26 @@
     color: white;
 }
 
-.dashboard-container .button {
+.menu{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 4em;
+    margin-top: 2em;
+}
+
+.button{
+    background: white;
+    color: var(--light-background-color);
+    text-decoration: none;
+    border-radius: 8px;
+    padding: 1.2em 4em;
+    transition: 2ms;
+    font-weight: bold;
+    width: 16vw;
+}
+
+.form-button {
     padding: 0.3em 0.8em;
     cursor: pointer;
 }
