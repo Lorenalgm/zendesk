@@ -4,7 +4,7 @@ import './style.css'
 
 function AgentCardResults (props){
     return (
-        <div className="agent-card">
+        <div className="agent-card-results">
                 <img src={props.agent_picture} alt={props.agent} />
                 <h1 className={props.color}>{props.agent}</h1>
                 <table className="table-dados">

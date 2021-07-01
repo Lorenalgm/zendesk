@@ -1,4 +1,4 @@
-.agent-card{
+.agent-card-results{
     width: 15rem;
     height: 13rem;
     background: #2C2929;
@@ -28,41 +28,41 @@
     flex-wrap: wrap;
 }
 
-.agent-card:hover{
+.agent-card-results:hover{
     background: #312e2e;
 
 }
 
-.agent-card h1 {
+.agent-card-results h1 {
     font-size: 1.5rem;
     line-height: 1.5em;
 }
 
-.agent-card p{
+.agent-card-results p{
     font-size: 1rem;
     line-height: 1.5em;
 }
 
-.agent-card .question{
+.agent-card-results .question{
     color: var(--info-color);
     font-weight: normal;
 }
 
-.agent-card .task{
+.agent-card-results .task{
     color: var(--warning-color);
     font-weight: normal;
 }
 
-.agent-card .problem{
+.agent-card-results .problem{
     color: var(--sucess-color);
     font-weight: normal;
 }
 
-.agent-card .total{
+.agent-card-results .total{
     font-weight: normal;
 }
 
-.agent-card img{
+.agent-card-results img{
     width: 4.5em;
     height: 4.5em;
     object-fit: cover;
