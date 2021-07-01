@@ -7,16 +7,12 @@ function AgentCardResults (props){
         <div className="agent-card-results">
                 <img src={props.agent_picture} alt={props.agent} />
                 <h1 className={props.color}>{props.agent}</h1>
-                <table className="table-dados">
-                    <tr>
-                        <td><p className="question">Duvidas: {props.question}</p></td>
-                        <td><p className="task">Tarefas: {props.task}</p></td>
-                    </tr>
-                    <tr>
-                        <td><p className="problem">Problemas: {props.problem}</p></td>
-                        <td><p className="total">Total: {props.total}</p></td>
-                    </tr>
-                </table>   
+                <div className="dados">
+                    <p className="question">Duvidas: {props.question}</p>
+                    <p className="task">Tarefas: {props.task}</p>
+                    <p className="problem">Problemas: {props.problem}</p>
+                    <p className="total">Total: {props.total}</p>
+                </div>
         </div>
     );
 }

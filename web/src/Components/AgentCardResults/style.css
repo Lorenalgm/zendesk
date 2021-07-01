@@ -12,20 +12,11 @@
     margin-left: 5em;
 }
 
-.table-dados{
+.dados{
     display: flex;
     width: 100%;
     flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
-}
-
-.table-dados tr{
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    flex-wrap: wrap;
 }
 
 .agent-card-results:hover{
