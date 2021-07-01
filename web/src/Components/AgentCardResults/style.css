@@ -1,0 +1,70 @@
+.agent-card{
+    width: 15rem;
+    height: 13rem;
+    background: #2C2929;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 200ms;
+    margin-bottom: 2em;
+    margin-left: 5em;
+}
+
+.table-dados{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.table-dados tr{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.agent-card:hover{
+    background: #312e2e;
+
+}
+
+.agent-card h1 {
+    font-size: 1.5rem;
+    line-height: 1.5em;
+}
+
+.agent-card p{
+    font-size: 1rem;
+    line-height: 1.5em;
+}
+
+.agent-card .question{
+    color: var(--info-color);
+    font-weight: normal;
+}
+
+.agent-card .task{
+    color: var(--warning-color);
+    font-weight: normal;
+}
+
+.agent-card .problem{
+    color: var(--sucess-color);
+    font-weight: normal;
+}
+
+.agent-card .total{
+    font-weight: normal;
+}
+
+.agent-card img{
+    width: 4.5em;
+    height: 4.5em;
+    object-fit: cover;
+    border-radius: 50%;
+}
