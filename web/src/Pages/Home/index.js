@@ -70,6 +70,9 @@ export default function Home() {
                 <div className="menu">
                     <Link className="button" to='/dashboard'>Dashboard semanal</Link>
                 </div>
+                <div className="menu">
+                    <Link className="button" to='/resultados'>Resultados semanais</Link>
+                </div>
                 <h1>Tickets do dia</h1>
                 <h2>{today.getDate() + '/' + (today.getMonth() + 1) + '/' + today.getFullYear()}</h2>
             </header>
