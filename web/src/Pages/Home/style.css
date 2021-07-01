@@ -45,6 +45,7 @@
     padding: 1.2em 4em;
     transition: 2ms;
     font-weight: bold;
+    width: 16vw;
 }
 
 .button:hover{
