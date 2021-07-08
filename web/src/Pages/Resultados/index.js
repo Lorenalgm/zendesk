@@ -3,11 +3,16 @@ import api from '../../services/api';
 import './style.css';
 import AgentCard from '../../Components/AgentCardResults'
 import AgentsSkeleton from '../../Components/AgentsSkeleton'
-import { Link } from 'react-router-dom';
+import Navbar from '../../Components/Navbar';
 import { FaSearch } from 'react-icons/fa';
+import IndicatorCard from '../../Components/IndicatorCard';
 
 export default function Results() {
     const [loading, setLoading] = useState(false);
+    
+    const [solvedTickets, setSolvedTickets] = useState('');
+    const [pendingTickets, setPendingTickets] = useState('');
+    const [openTickets, setOpenTickets] = useState('');
 
     const [inicialDate, setInicialDate] = useState('');
     const [finalDate, setFinalDate] = useState('');
@@ -100,6 +105,15 @@ export default function Results() {
                     setAgentInfos([
                             ...AgentsInfoTemp
                         ])
+
+                        const response5 = await api.get(`/tickets/?filter=status:solved status:closed solved>=${inicialDate} solved<=${finalDate}`);
+                        setSolvedTickets(response5.data);
+            
+                        const response6 = await api.get(`/tickets/?filter=status:pending`);
+                        setPendingTickets(response6.data);
+            
+                        const response7 = await api.get(`/tickets/?filter=status:open status:new`);
+                        setOpenTickets(response7.data);
                 }catch(error){
                     console.log('erro ao carregar dados: '+error.message);
                 }finally{
@@ -109,11 +123,8 @@ export default function Results() {
         }
     return (
         <div className="tickets-container-results">
+            <Navbar />
             <header className="tickets-header">
-                <div className="menu">
-                    <Link className="button" to='/dashboard'>Dashboard semanal</Link>
-                    <Link className="button" to='/'>Acompanhamento diário</Link>
-                </div>
                 <h1>Resultados da semana</h1>
                 <form onSubmit={searchResultsTickets}>
                     <input type="date" name="" id="inicialDate" onChange={e => setInicialDate(e.target.value)} value={inicialDate}/>
@@ -136,6 +147,11 @@ export default function Results() {
                 }) 
                 
             )}
+            </div>
+            <div className="indicators-container">
+                < IndicatorCard color="sucess" number={solvedTickets} text="Resolvidos"/>
+                < IndicatorCard color="info" number={pendingTickets} text="Pendentes"/>
+                < IndicatorCard color="warning" number={openTickets} text="Em aberto"/>
             </div>
         </div>
     )
