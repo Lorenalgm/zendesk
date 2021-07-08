@@ -3,7 +3,7 @@ import api from '../../services/api';
 import './style.css';
 import IndicatorCard from '../../Components/IndicatorCard';
 import { FaSearch } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import Navbar from '../../Components/Navbar';
 
 function Dashboard (){
 
@@ -23,19 +23,15 @@ function Dashboard (){
             const response2 = await api.get(`/tickets/?filter=status:pending`);
             setPendingTickets(response2.data);
 
-            const response3 = await api.get(`/tickets/?filter=status:open`);
+            const response3 = await api.get(`/tickets/?filter=status:open status:new`);
             setOpenTickets(response3.data);
         }
 
     return (
         <div className="dashboard-container">
+        <Navbar />
             <header className="indicator-header">
-            <div className="menu">
-                <Link className="button" to='/'>Acompanhamento diário</Link>
-            </div>
-            <div className="menu">
-                <Link className="button" to='/resultados'>Resultados semanais</Link>
-            </div>
+            
             <h2>Indicadores da semana</h2>
             <form onSubmit={searchSolvedTickets}>
                 <input type="date" name="" id="inicialDate" onChange={e => setInicialDate(e.target.value)} value={inicialDate}/>
@@ -49,9 +45,6 @@ function Dashboard (){
                 < IndicatorCard color="sucess" number={solvedTickets} text="Resolvidos"/>
                 < IndicatorCard color="info" number={pendingTickets} text="Pendentes"/>
                 < IndicatorCard color="warning" number={openTickets} text="Em aberto"/>
-                {/* < IndicatorCard color="sucess" number="23" text="Resolvidos"/>
-                < IndicatorCard color="info" number="23" text="Resolvidos"/>
-                < IndicatorCard color="warning" number="23" text="Resolvidos"/> */}
             </div>
 
         </div>
