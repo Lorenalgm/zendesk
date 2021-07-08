@@ -4,6 +4,7 @@ import './style.css';
 import AgentCard from '../../Components/AgentCard'
 import AgentsSkeleton from '../../Components/AgentsSkeleton'
 import { Link } from 'react-router-dom';
+import Navbar from '../../Components/Navbar';
 
 export default function Home() {        
     var today = new Date(),
@@ -66,11 +67,9 @@ export default function Home() {
 
     return (
         <div className="tickets-container">
+        <Navbar />
             <header className="tickets-header">
-                <div className="menu">
-                    <Link className="button" to='/dashboard'>Dashboard semanal</Link>
-                    <Link className="button" to='/resultados'>Resultados semanais</Link>
-                </div>
+                
                 <h1>Tickets do dia</h1>
                 <h2>{today.getDate() + '/' + (today.getMonth() + 1) + '/' + today.getFullYear()}</h2>
             </header>
