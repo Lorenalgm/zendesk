@@ -7,7 +7,7 @@ module.exports = {
 
     const chats = await chatApi.get(`/chats/search?q=${filter}`);
   
-    const filteredChats = chats.data;
+    const filteredChats = chats.data.count;
   
     return response.json(filteredChats);
   },
