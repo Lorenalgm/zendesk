@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import api from '../../services/api';
 import './style.css';
 import AgentCard from '../../Components/AgentCardResults'
@@ -17,7 +17,7 @@ export default function Results() {
     const [inicialDate, setInicialDate] = useState('');
     const [finalDate, setFinalDate] = useState('');
     const [agentInfos, setAgentInfos] = useState([]);
-    const [agentes, setAgentes] = useState(
+    const [agentes] = useState(
             [
                 {
                     name:'lucas',
