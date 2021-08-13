@@ -88,6 +88,7 @@ export default function Home() {
         searchAureaneTickets();
         searchAlexandreTickets();
         searchDrianneTickets();
+        searchLucasPending();
 
     },[data])
 
