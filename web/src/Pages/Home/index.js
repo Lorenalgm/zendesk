@@ -25,6 +25,9 @@ export default function Home() {
 
     const [aureane, setAureane] = useState('');
     const [aureanePending, setAureanePending] = useState('');
+
+    const [lucas, setLucas] = useState('');
+    const [lucasPending, setLucasPending] = useState('');
     
     useEffect(() => {
         async function searchLumaTickets(){
@@ -67,6 +70,15 @@ export default function Home() {
 
             const response2 = await api.get(`/tickets/?filter=tags:drianne status:pending`);
             setDriannePending(response2.data);
+
+        }
+
+        async function searchLucasPending(){
+            const response = await api.get(`/tickets/?filter=tags:lucas solved:${data}`);
+            setLucas(response.data);
+
+            const response2 = await api.get(`/tickets/?filter=tags:lucas status:pending`);
+            setLucasPending(response2.data);
             setLoading(false);
 
         }
@@ -108,6 +120,9 @@ export default function Home() {
                     <AgentCard 
                         agent_picture="https://trello-attachments.s3.amazonaws.com/6036b82d00e3de2b27796ff7/960x1280/3d94b336907be4f26cf5e2dd1ef60791/foto_atualizada.jpeg.jpg" 
                         agent="Drianne" solved={drianne} pending={setDriannePending} /> 
+                                            <AgentCard 
+                        agent_picture="https://trello-attachments.s3.amazonaws.com/60353fe07ac21479926b9f40/511x512/70456850a92e4d8718e6f7613e066e66/Screenshot_3.png" 
+                        agent="Luquitas" solved={lucas} pending={setLucasPending} /> 
 
                 </div>
             )}
