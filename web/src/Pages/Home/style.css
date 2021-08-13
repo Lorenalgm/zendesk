@@ -22,10 +22,11 @@
 }
 
 .tickets-container .agents-container{
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:1rem 6rem;
+    margin-top: 2rem;
     justify-content: space-around;
-    margin-top: 3em;
-    width: 85%;
     flex-wrap: wrap;
 }
 
