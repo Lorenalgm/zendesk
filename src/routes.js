@@ -7,6 +7,10 @@ routes.get('/', (req, res) => {
 	return res.json({ status: true }).send();
 });
 
+routes.get('/teste', (req, res) => {
+	return res.json({ status: true }).send();
+});
+
 routes.get('/tickets', TicketsController.index);
 routes.get('/chats', ChatsController.index);
 
