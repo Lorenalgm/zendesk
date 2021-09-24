@@ -37,7 +37,7 @@ export default function Home() {
 
         async function searchUberTickets(){
             const response = await api.get(`/tickets/?filter=tags:uber solved:${data}`);
-            setUberr(response.data);
+            setUber(response.data);
 
             const response2 = await api.get(`/tickets/?filter=tags:uber status:pending`);
             setUberPending(response2.data);
@@ -98,7 +98,7 @@ export default function Home() {
                     
                     <AgentCard 
                         agent_picture="https://ca.slack-edge.com/T56FFG3EW-UBYHQKYEB-12ea2d4f02bd-512" 
-                        agent="Douglas" solved={uber} pending={uberPending} />
+                        agent="Uber" solved={uber} pending={uberPending} />
                     
                     <AgentCard 
                         agent_picture="https://ca.slack-edge.com/T56FFG3EW-U01U6B19UFN-2a39f84e3a7d-512" 
@@ -113,8 +113,8 @@ export default function Home() {
 
             <div className="total">
                     <h3>Total N2</h3>
-                    <p>{luma+douglas+aureane+alexandre+drianne} resolvidos </p>
-                    <p>{lumaPending+douglasPending+aureanePending+alexandrePending+driannePending} pendentes</p> 
+                    <p>{luma+uber+aureane+alexandre+drianne} resolvidos </p>
+                    <p>{lumaPending+uberPending+aureanePending+alexandrePending+driannePending} pendentes</p> 
             </div>
 
         </div>
