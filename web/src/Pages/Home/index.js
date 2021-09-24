@@ -20,15 +20,12 @@ export default function Home() {
     const [drianne, setDrianne] = useState('');
     const [driannePending, setDriannePending] = useState('');
 
-    const [douglas, setDouglas] = useState('');
-    const [douglasPending, setDouglasPending] = useState('');
+    const [uber, setUber] = useState('');
+    const [uberPending, setUberPending] = useState('');
 
     const [aureane, setAureane] = useState('');
     const [aureanePending, setAureanePending] = useState('');
 
-    const [lucas, setLucas] = useState('');
-    const [lucasPending, setLucasPending] = useState('');
-    
     useEffect(() => {
         async function searchLumaTickets(){
             const response = await api.get(`/tickets/?filter=tags:luma solved:${data}`);
@@ -38,12 +35,12 @@ export default function Home() {
             setLumaPending(response2.data);
         }
 
-        async function searchDouglasTickets(){
-            const response = await api.get(`/tickets/?filter=tags:douglas solved:${data}`);
-            setDouglas(response.data);
+        async function searchUberTickets(){
+            const response = await api.get(`/tickets/?filter=tags:uber solved:${data}`);
+            setUberr(response.data);
 
-            const response2 = await api.get(`/tickets/?filter=tags:douglas status:pending`);
-            setDouglasPending(response2.data);
+            const response2 = await api.get(`/tickets/?filter=tags:uber status:pending`);
+            setUberPending(response2.data);
         }
 
         async function searchAureaneTickets(){
@@ -73,22 +70,11 @@ export default function Home() {
 
         }
 
-        async function searchLucasPending(){
-            const response = await api.get(`/tickets/?filter=tags:lucas solved:${data}`);
-            setLucas(response.data);
-
-            const response2 = await api.get(`/tickets/?filter=tags:lucas status:pending`);
-            setLucasPending(response2.data);
-            setLoading(false);
-
-        }
-
         searchLumaTickets();
-        searchDouglasTickets();
         searchAureaneTickets();
         searchAlexandreTickets();
         searchDrianneTickets();
-        searchLucasPending();
+        searchUberTickets();
 
     },[data])
 
@@ -111,8 +97,8 @@ export default function Home() {
                         agent="Alexandre" solved={alexandre} pending={alexandrePending} />
                     
                     <AgentCard 
-                        agent_picture="https://trello-attachments.s3.amazonaws.com/6035712992fb3687357181b6/792x793/503a808e6af8a30822fee82ecca57fdb/img_-_Douglas_Esp%C3%ADndola.png" 
-                        agent="Douglas" solved={douglas} pending={douglasPending} />
+                        agent_picture="https://ca.slack-edge.com/T56FFG3EW-UBYHQKYEB-12ea2d4f02bd-512" 
+                        agent="Douglas" solved={uber} pending={uberPending} />
                     
                     <AgentCard 
                         agent_picture="https://ca.slack-edge.com/T56FFG3EW-U01U6B19UFN-2a39f84e3a7d-512" 
@@ -121,9 +107,6 @@ export default function Home() {
                     <AgentCard 
                         agent_picture="https://trello-attachments.s3.amazonaws.com/6036b82d00e3de2b27796ff7/960x1280/3d94b336907be4f26cf5e2dd1ef60791/foto_atualizada.jpeg.jpg" 
                         agent="Drianne" solved={drianne} pending={driannePending} /> 
-                                            <AgentCard 
-                        agent_picture="https://trello-attachments.s3.amazonaws.com/60353fe07ac21479926b9f40/511x512/70456850a92e4d8718e6f7613e066e66/Screenshot_3.png" 
-                        agent="Luquitas" solved={lucas} pending={lucasPending} /> 
 
                 </div>
             )}
