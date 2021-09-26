@@ -50,6 +50,8 @@ export default function Home() {
             const response2 = await api.get(`/tickets/?filter=tags:aureane status:pending`);
             setAureanePending(response2.data);
 
+            setLoading(false);
+
         }
 
         async function searchAlexandreTickets(){
