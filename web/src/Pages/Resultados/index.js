@@ -20,6 +20,19 @@ export default function Results() {
     const [agentInfos, setAgentInfos] = useState([]);
     useEffect(() => {
         searchResultsTickets();
+
+        window.onscroll = function() {myFunction()};
+
+        var header = document.getElementById("header-agents");
+        var sticky = header.offsetTop;
+
+        function myFunction() {
+        if (window.pageYOffset > sticky) {
+            header.classList.add("sticky");
+        } else {
+            header.classList.remove("sticky");
+        }
+        }
     }, [])
     const [agentes] = useState(
             [
@@ -181,6 +194,15 @@ export default function Results() {
 
             {loading && <AgentsSkeleton />}
             <div className="agents-container-results">
+            <div className="header" id="header-agents">
+                <p>Agente</p>
+                <p className="question">Dúvidas</p>
+                <p className="task">Tarefas</p>
+                <p className="problem">Problemas</p>
+                <p>Total</p>
+                <p>Chat</p>
+                <p>Satisfação</p>
+            </div>
             {!loading && (
                 agentInfos.map((agente)=>{
                     return(
