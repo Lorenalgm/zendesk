@@ -24,11 +24,10 @@
 }
 
 .tickets-container-results .agents-container-results{
-    display: flex;
-    justify-content: space-around;
-    margin-top: 3em;
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 8em;
     width: 85%;
-    flex-wrap: wrap;
 }
 
 .tickets-container-results .menu{
