@@ -52,11 +52,11 @@ export default function Results() {
                     name:'aureane',
                     image:'https://ca.slack-edge.com/T56FFG3EW-U01U6B19UFN-2a39f84e3a7d-512'
                 },
-                {
-                    name:'uber',
-                    image:'https://trello-attachments.s3.amazonaws.com/603481895db937125c03e74e/6035669cd828620144745941/af370852f7956cc1da2c024e1e55ffd3/image.png',
-                    chat: false
-                },
+                // {
+                //     name:'uber',
+                //     image:'https://trello-attachments.s3.amazonaws.com/603481895db937125c03e74e/6035669cd828620144745941/af370852f7956cc1da2c024e1e55ffd3/image.png',
+                //     chat: false
+                // },
                 {
                     name:'alexandre',
                     image:'https://trello-attachments.s3.amazonaws.com/604bccc4d51c2b27a69d9cd4/195x197/1af6bb25c8f05b934a163386daabac39/Screenshot_65.png',
@@ -67,11 +67,11 @@ export default function Results() {
                     image:'https://ca.slack-edge.com/T56FFG3EW-U01PVV09MT6-f77d984f9feb-512',
                     chat: true
                 },
-                {
-                    name:'drianne',
-                    image:'https://trello-attachments.s3.amazonaws.com/6036b82d00e3de2b27796ff7/960x1280/3d94b336907be4f26cf5e2dd1ef60791/foto_atualizada.jpeg.jpg',
-                    chat: true
-                },
+                // {
+                //     name:'drianne',
+                //     image:'https://trello-attachments.s3.amazonaws.com/6036b82d00e3de2b27796ff7/960x1280/3d94b336907be4f26cf5e2dd1ef60791/foto_atualizada.jpeg.jpg',
+                //     chat: true
+                // },
                 {
                     name:'fernanda',
                     image:'https://trello-attachments.s3.amazonaws.com/6035439118587528d04f1cf3/538x678/b8b4f30540823c59704b5976cd3ede74/image.png',
@@ -82,11 +82,11 @@ export default function Results() {
                     image:'https://trello-attachments.s3.amazonaws.com/60353fe15584ee18e0dd08d1/1153x2048/526869e1b4204291de6fe2d3fa9e6c54/EqgilqwXAAMboqL_-_Giovanna_Lourinho.png',
                     chat: true
                 },
-                {
-                    name:'duarte',
-                    image:'https://ca.slack-edge.com/T029TQP6WQ7-U02AY6116QG-30a8df6ae2c3-512',
-                    chat: true
-                },
+                // {
+                //     name:'duarte',
+                //     image:'https://ca.slack-edge.com/T029TQP6WQ7-U02AY6116QG-30a8df6ae2c3-512',
+                //     chat: true
+                // },
                 {
                     name:'aline',
                     image:'https://ca.slack-edge.com/T02AY5X4DFS-U02A8N19NFM-b3aca9920403-512',
@@ -134,19 +134,19 @@ export default function Results() {
                             ...infoAgent,
                             problem:response4.data?response4.data:0
                         }
-                        if(agente.chat === true){
-                            const responseChat = await api.get(`/chats/?filter=agent_names:${agente.name} AND timestamp:[${inicialDate} TO ${finalDate}]`);
-                            infoAgent = {
-                                ...infoAgent,
-                                chats:responseChat.data? responseChat.data:0
-                            }
+                        // if(agente.chat === true){
+                        //     const responseChat = await api.get(`/chats/?filter=agent_names:${agente.name} AND timestamp:[${inicialDate} TO ${finalDate}]`);
+                        //     infoAgent = {
+                        //         ...infoAgent,
+                        //         chats:responseChat.data? responseChat.data:0
+                        //     }
 
-                            const responseChatRating = await api.get(`/chats/?filter=agent_names:${agente.name} AND timestamp:[${inicialDate} TO ${finalDate}] AND rating:bad`);
-                            infoAgent = {
-                                ...infoAgent,
-                                chatRating:responseChatRating.data? responseChatRating.data:0
-                            }
-                        }else{
+                        //     const responseChatRating = await api.get(`/chats/?filter=agent_names:${agente.name} AND timestamp:[${inicialDate} TO ${finalDate}] AND rating:bad`);
+                        //     infoAgent = {
+                        //         ...infoAgent,
+                        //         chatRating:responseChatRating.data? responseChatRating.data:0
+                        //     }
+                        // }else{
                             infoAgent = {
                                 ...infoAgent,
                                 chats:0
@@ -155,7 +155,7 @@ export default function Results() {
                                 ...infoAgent,
                                 chatRating:0
                             }
-                        }
+                        // }
                         AgentsInfoTemp = [
                             ...AgentsInfoTemp,
                             infoAgent
